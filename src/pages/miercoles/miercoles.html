@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Miercoles</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-card *ngFor="let promotions of promos">
+    <ion-thumbnail item-left>
+      <img [src]="promotions.imagen">
+    </ion-thumbnail>
+    <ion-card-content>
+      <h2 id="titulo">{{ promotions.restaurante }}</h2>
+      <p>{{ promotions.descripcion }}</p>
+      <p>${{ promotions.precio }}</p>
+      <p align="right">
+        <a ion-button color="danger" small round href="{{ promotions.ubicacion }}">Ubicacion</a>
+      </p>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
